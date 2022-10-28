@@ -1,0 +1,12 @@
+A public git repository.[URL01]
+https://github.com/KerolesNady/udacity-devops-project3
+
+URL to S3 Bucket
+URL02 => http://udapeople-4258b3b.s3-website-us-east-1.amazonaws.com
+
+URL to  CloudFront distribution
+URL03  => d89wsyfeigyjz.cloudfront.net	
+
+
+URL04  => https://3.86.109.192:3030/api/status
+
