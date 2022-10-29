@@ -137,6 +137,7 @@ jobs: #now we will bbuild our jobs
           command: |
             cd frontend
             npm install
+            npm audit fix --force --audit-level=critical
             npm audit fix --audit-level=critical
       - slack/notify:
           channel: project-give-your-application-auto-deploy-superpowersdone
@@ -156,6 +157,8 @@ jobs: #now we will bbuild our jobs
             cd backend
             npm install
             npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
+            npm audit --audit-level=critical
       - slack/notify:
           channel: project-give-your-application-auto-deploy-superpowersdone
           event: fail
@@ -323,10 +326,8 @@ jobs: #now we will bbuild our jobs
             cd backend
             npm run build
             tar -czvf artifact.tar.gz dist/* package*
-            
             cd .. 
             cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
-            
       - run:
           name: Deploy backend
           command: |
