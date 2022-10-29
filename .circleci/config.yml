@@ -291,7 +291,7 @@ jobs: #now we will bbuild our jobs
 
   deploy-backend: # create deploy-backend
     docker:
-      - image: cimg/base:stable
+      - image: cimg/python:3.10
     steps:
       - checkout
       - run: sudo apt-get install tar gzip -y
@@ -440,7 +440,7 @@ workflows:
       - run-migrations:
           requires: [configure-infrastructure]
       - deploy-frontend:
-          requires: [run-migrations, deploy-backend]
+          requires: [run-migrations]
       - deploy-backend:
           requires: [run-migrations]
       - smoke-test:
