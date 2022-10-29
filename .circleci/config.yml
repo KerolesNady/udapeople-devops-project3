@@ -289,7 +289,7 @@ jobs: #now we will bbuild our jobs
       - destroy-environment
       - revert-migrations
 
-  deploy-backend: # create deploy-backend
+  deploy-backend:
     docker:
       - image: cimg/python:3.10
     steps:
